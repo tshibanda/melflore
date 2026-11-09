@@ -94,9 +94,10 @@ details.glass:hover{background:rgba(255,255,255,.86)}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 @media (max-width:640px){.h1{font-size:38px!important}.h2{font-size:29px!important}}
 
-/* Menu mobile */
+/* Menu mobile (aussi sur tablette, quand les liens ne tiennent plus) */
 .burger{display:none}
-@media (max-width:640px){
+@media (max-width:900px){
+  .site-header nav a.hide-sm{display:none!important}
   .burger{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;padding:0 11px;border:1px solid #E3DEF5;border-radius:12px;background:rgba(255,255,255,.75);cursor:pointer;box-sizing:border-box}
   .burger span{display:block;height:2px;border-radius:2px;background:#15124F;transition:transform .25s ease}
   .burger[aria-expanded="true"] span:first-child{transform:translateY(3.5px) rotate(45deg)}

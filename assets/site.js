@@ -82,7 +82,7 @@
     burger.addEventListener("click", function () { setMenu(panel.hidden); });
     panel.addEventListener("click", function (e) { if (e.target.closest("a")) setMenu(false); });
     d.addEventListener("keydown", function (e) { if (e.key === "Escape" && !panel.hidden) { setMenu(false); burger.focus(); } });
-    window.addEventListener("resize", function () { if (window.innerWidth > 640 && !panel.hidden) setMenu(false); });
+    window.addEventListener("resize", function () { if (window.innerWidth > 900 && !panel.hidden) setMenu(false); });
   }
 
   // Sommaire automatique des articles
@@ -112,11 +112,39 @@
     if (a) track("clic-audit" + location.pathname.replace(/\/$/, "").replace(/\//g, "-"), "Clic vers l'audit");
   });
 
+  // Demande d'audit : événement Klaviyo (suivi) et inscription facultative à la Lettre
+  function kpost(path, payload) {
+    if (!KLAVIYO.companyId) return;
+    try {
+      fetch("https://a.klaviyo.com/client/" + path + "/?company_id=" + encodeURIComponent(KLAVIYO.companyId), {
+        method: "POST", keepalive: true,
+        headers: { "Content-Type": "application/json", revision: "2024-10-15" },
+        body: JSON.stringify(payload)
+      });
+    } catch (e) {}
+  }
+  function sendAuditToKlaviyo(f) {
+    var email = (f.email && f.email.value || "").trim();
+    if (!email || (f.site_web && f.site_web.value)) return;
+    var v = function (n) { return f[n] ? String(f[n].value || "").slice(0, 300) : ""; };
+    kpost("events", { data: { type: "event", attributes: {
+      properties: { boutique: v("url"), ca_mensuel: v("ca"), outil_email: v("outil"), message: v("message"), source: v("source") || "site" },
+      metric: { data: { type: "metric", attributes: { name: "Demande d'audit" } } },
+      profile: { data: { type: "profile", attributes: { email: email, first_name: v("prenom"), properties: { boutique: v("url"), ca_mensuel: v("ca"), outil_email: v("outil") } } } }
+    } } });
+    if (f.newsletter && f.newsletter.checked && KLAVIYO.listId) {
+      kpost("subscriptions", { data: { type: "subscription", attributes: {
+        custom_source: "Formulaire d'audit",
+        profile: { data: { type: "profile", attributes: { email: email } } }
+      }, relationships: { list: { data: { type: "list", id: KLAVIYO.listId } } } } });
+    }
+  }
+
   // Formulaire d'audit : erreurs lisibles et état d'envoi
   d.querySelectorAll('form[name="audit"]').forEach(function (f) {
     f.addEventListener("submit", function () {
       var b = f.querySelector('button[type="submit"]');
-      if (b && f.checkValidity()) { track("demande-audit", "Demande d'audit envoyée"); b.disabled = true; b.dataset.label = b.innerHTML; b.textContent = "Envoi en cours…"; }
+      if (b && f.checkValidity()) { track("demande-audit", "Demande d'audit envoyée"); sendAuditToKlaviyo(f); b.disabled = true; b.dataset.label = b.innerHTML; b.textContent = "Envoi en cours…"; }
     });
     f.addEventListener("invalid", function (e) {
       var el = e.target;
