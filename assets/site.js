@@ -103,11 +103,20 @@
     }
   }
 
+  // Mesure d'audience sans cookie (GoatCounter) : événements clés
+  function track(path, title) {
+    try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: path, title: title, event: true }); } catch (e) {}
+  }
+  d.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="/audit"]');
+    if (a) track("clic-audit" + location.pathname.replace(/\/$/, "").replace(/\//g, "-"), "Clic vers l'audit");
+  });
+
   // Formulaire d'audit : erreurs lisibles et état d'envoi
   d.querySelectorAll('form[name="audit"]').forEach(function (f) {
     f.addEventListener("submit", function () {
       var b = f.querySelector('button[type="submit"]');
-      if (b && f.checkValidity()) { b.disabled = true; b.dataset.label = b.innerHTML; b.textContent = "Envoi en cours…"; }
+      if (b && f.checkValidity()) { track("demande-audit", "Demande d'audit envoyée"); b.disabled = true; b.dataset.label = b.innerHTML; b.textContent = "Envoi en cours…"; }
     });
     f.addEventListener("invalid", function (e) {
       var el = e.target;
@@ -175,7 +184,7 @@
         if (ok) {
           form.reset();
           msg.textContent = "Merci ! Confirmez votre inscription dans l'email que vous venez de recevoir.";
-          if (window.gtag) window.gtag("event", "newsletter_signup");
+          track("inscription-newsletter", "Inscription newsletter");
         } else {
           msg.classList.add("err");
           msg.textContent = "L'inscription n'a pas abouti. Réessayez, ou écrivez à contact@melflore.com.";
