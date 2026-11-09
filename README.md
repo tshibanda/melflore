@@ -40,3 +40,7 @@ Les formulaires « La Lettre Melflore » (pied de page de toutes les pages et pa
 ## Finitions communes
 
 `assets/site.css` et `assets/site.js` gèrent l'en-tête collant, les apparitions au défilement, le bouton d'audit collant sur mobile, la barre de lecture des articles et la newsletter. Après une régénération des articles, relancer le script de finitions (`polish.py`) pour remettre le pied de page commun.
+
+## Cache
+
+Les fichiers de `/assets` sont mis en cache 30 jours. Après toute modification de `site.css`, `site.js` ou `fonts.css`, relancer `bust.py` : il met à jour le paramètre `?v=` dans toutes les pages.
