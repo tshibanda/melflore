@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>5 flows email Klaviyo et Brevo pour marque de cosmétiques | Melflore</title>
+<meta name="description" content="Bienvenue, navigation abandonnée, panier abandonné, post-achat, réachat : les 5 relances automatiques qu&#x27;une marque beauté sur Shopify doit installer, dans quel ordre et comment les personnaliser.">
+<link rel="canonical" href="https://melflore.com/ressources/flows-email-marque-cosmetique">
+<meta property="og:title" content="5 flows email Klaviyo et Brevo pour marque de cosmétiques | Melflore">
+<meta property="og:description" content="Bienvenue, navigation abandonnée, panier abandonné, post-achat, réachat : les 5 relances automatiques qu&#x27;une marque beauté sur Shopify doit installer, dans quel ordre et comment les personnaliser.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://melflore.com/ressources/flows-email-marque-cosmetique">
+<meta property="og:image" content="https://melflore.com/assets/og-melflore.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Melflore">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F4F1FB">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts.css">
+<style>
+body{margin:0;background:#F4F1FB;font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#4B4870;-webkit-font-smoothing:antialiased}
+a{color:#6A53EE}a:hover{color:#4E37D6}
+h1,h2,h3{font-family:"Inter Tight","Inter",-apple-system,sans-serif;color:#15124F;margin:0;text-wrap:balance;letter-spacing:-0.02em}
+p{margin:0}
+.wrap{width:100%;max-width:1120px;margin:0 auto;box-sizing:border-box;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.doc{background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.95);border-radius:20px;box-shadow:0 1px 2px rgba(40,30,110,.05),0 14px 36px rgba(70,50,170,.07)}
+.doc section{display:flex;flex-direction:column;gap:12px;padding-top:28px;border-top:1px solid #ECE8F8}
+.doc h2{font-size:20px;font-weight:600}
+.doc p,.doc li{font-size:15px;line-height:1.7}
+.doc ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6A53EE}
+.toc a{color:#4B4870;text-decoration:none;font-size:14px;line-height:1.5}
+.toc a:hover{color:#6A53EE}
+.layout{display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start}
+.ph{background:#EEEAFD;color:#4E37D6;border-radius:4px;padding:0 4px}
+@media (max-width:640px){.h1{font-size:36px!important}}
+</style>
+<style>button.btn{border:0;cursor:pointer;font-family:inherit}.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}</style>
+<style>
+.art{max-width:760px}
+.art p,.art li{font-size:17px;line-height:1.75;color:#3E3B63}
+.art p{margin:0 0 18px}
+.art .lead{font-size:19px;color:#15124F}
+.art h2{font-size:28px;font-weight:600;margin:44px 0 14px;scroll-margin-top:24px}
+.art h3{font-size:20px;font-weight:600;margin:28px 0 10px}
+.art ul{margin:0 0 18px;padding-left:22px;display:flex;flex-direction:column;gap:8px}
+.art a{color:#6A53EE}
+.crumbs{font-size:13px;color:#6E6B91}.crumbs a{color:#6E6B91;text-decoration:none}.crumbs a:hover{color:#6A53EE}
+.meta{font-size:14px;color:#6E6B91}
+.tbl{overflow-x:auto;margin:0 0 18px}
+.tbl table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
+.tbl th,.tbl td{text-align:left;padding:12px 14px;border-bottom:1px solid #E3DEF5;vertical-align:top}
+.tbl th{color:#15124F;font-weight:600;background:#F1EEFC}
+.cta{margin:48px 0 8px;padding:32px;border-radius:20px;background:linear-gradient(160deg,#2A1F86,#6F58F2);color:#fff;display:flex;flex-direction:column;gap:12px}
+.cta p{color:#EDEAFF!important;margin:0!important}
+.cta .cta-t{font:600 26px/1.2 "Inter Tight",sans-serif;color:#fff!important}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:12px;font:500 15px/1 "Inter",sans-serif;text-decoration:none;align-self:flex-start}
+.btn-w{background:#fff;color:#2A1F86!important}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{display:flex;flex-direction:column;gap:10px;padding:26px;border-radius:20px;background:rgba(255,255,255,.72);border:1px solid #fff;box-shadow:0 14px 36px rgba(70,50,170,.07);text-decoration:none}
+.card:hover{box-shadow:0 18px 40px rgba(70,50,170,.14)}
+.card h2{font-size:21px;font-weight:600;line-height:1.25}
+.card p{font-size:15px;line-height:1.6;color:#4B4870}
+.art .eyebrow,.card .eyebrow{color:#6A53EE;font-size:12px;line-height:1.4}
+.related{margin-top:40px;display:flex;flex-direction:column;gap:10px}
+@media (max-width:640px){.art h2{font-size:24px}.art p,.art li{font-size:16px}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Les 5 flows email indispensables pour une marque de cosmétiques","description":"Bienvenue, navigation abandonnée, panier abandonné, post-achat, réachat : les 5 relances automatiques qu'une marque beauté sur Shopify doit installer, dans quel ordre et comment les personnaliser.","datePublished":"2026-11-09","dateModified":"2026-11-09","inLanguage":"fr-FR","mainEntityOfPage":"https://melflore.com/ressources/flows-email-marque-cosmetique","image":"https://melflore.com/assets/og-melflore.jpg","author":{"@type":"Organization","name":"Melflore","url":"https://melflore.com/"},"publisher":{"@id":"https://melflore.com/#melflore","@type":"Organization","name":"Melflore","url":"https://melflore.com/","logo":{"@type":"ImageObject","url":"https://melflore.com/assets/melflore-logo.png"}}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://melflore.com/"},{"@type":"ListItem","position":2,"name":"Ressources","item":"https://melflore.com/ressources"},{"@type":"ListItem","position":3,"name":"Les 5 flows email indispensables pour une marque de cosmétiques","item":"https://melflore.com/ressources/flows-email-marque-cosmetique"}]}]}</script>
+</head>
+<body>
+<div style="position: relative; overflow: hidden; background: #F4F1FB; min-height: 100vh">
+  <div aria-hidden="true" style="position: absolute; top: -220px; right: -180px; width: 720px; height: 720px; border-radius: 50%; background: radial-gradient(circle, rgba(150,132,255,.4) 0%, rgba(150,132,255,0) 65%); pointer-events: none"></div>
+
+  <header class="wrap" style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 22px; padding-bottom: 22px">
+    <a href="/" aria-label="Melflore, accueil" style="display: inline-flex"><img src="/assets/melflore-logo.svg" alt="Melflore" width="118" height="58" style="display: block; width: 118px; height: 58px"></a>
+    <a href="/" style="color: #4B4870; text-decoration: none; font-size: 14px">← Retour au site</a>
+  </header>
+
+  <main class="wrap" style="position: relative; display: flex; flex-direction: column; gap: 24px; padding-top: 24px; padding-bottom: 96px">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="/">Accueil</a> › <a href="/ressources">Ressources</a> › <a href="/ressources/flows-email-marque-cosmetique">Les 5 flows email indispensables pour une marque de cosmétiques</a></nav>
+    <article class="art">
+      <p class="eyebrow">Guide</p>
+      <h1 class="h1" style="font-size: 46px; line-height: 1.1; font-weight: 600; margin: 12px 0 14px">Les 5 flows email indispensables pour une marque de cosmétiques</h1>
+      <p class="meta">Par l'équipe Melflore · 9 novembre 2026 · 8 min de lecture</p>
+      <div style="height: 20px"></div>
+
+<p class="lead">Une marque de cosmétiques en ligne paie pour chaque visite : publicité, influence, contenu. La plupart de ces visiteuses repartent sans acheter. Les flows email (des relances automatiques déclenchées par ce que fait la visiteuse) sont le moyen le plus rentable de récupérer une partie de ces ventes, parce qu'ils travaillent sans budget publicitaire supplémentaire.</p>
+<p>Voici les cinq flows à installer en priorité, sur Klaviyo comme sur Brevo, et ce qui les rend efficaces dans la beauté.</p>
+
+<h2 id="bienvenue">1. Le flow de bienvenue</h2>
+<p>Il se déclenche quand une visiteuse s'inscrit, en général via un pop-up. C'est souvent le flow le plus lu : la personne vient de donner son email, elle attend quelque chose.</p>
+<p><strong>Ce qu'il doit faire dans la beauté :</strong> présenter la marque et sa promesse, puis orienter vers les bons produits. Le levier le plus puissant est une seule question posée dans le pop-up : « Quelle est votre préoccupation principale ? » (imperfections, sécheresse, éclat, rides…). Cette réponse permet ensuite d'envoyer une routine adaptée plutôt qu'un catalogue.</p>
+<ul>
+  <li>Email 1, immédiat : bienvenue, ce qui rend la marque différente, l'avantage promis à l'inscription.</li>
+  <li>Email 2, à J+2 : la routine conseillée pour sa préoccupation, produit par produit.</li>
+  <li>Email 3, à J+4 : la preuve, avec des avis clients, les ingrédients clés et les questions fréquentes.</li>
+</ul>
+
+<h2 id="navigation">2. Le flow de navigation abandonnée</h2>
+<p>Il vise une visiteuse identifiée (abonnée ou cliente) qui a consulté un produit sans l'ajouter au panier. Klaviyo le gère nativement grâce à l'événement « Viewed Product » de Shopify ; sur Brevo, il dépend du suivi installé sur la boutique.</p>
+<p>Le ton doit rester léger : un rappel du produit consulté, un conseil d'utilisation, et éventuellement des alternatives pour le même besoin de peau. Un ou deux emails suffisent. Pensez à exclure les personnes déjà entrées dans le flow de panier abandonné pour éviter les doublons.</p>
+
+<h2 id="panier">3. Le flow de panier abandonné</h2>
+<p>C'est le flow qui rapporte le plus vite : la visiteuse a montré une intention d'achat claire. Il ne peut toucher que les contacts dont l'email est connu, d'où l'importance du pop-up et de la saisie de l'email tôt dans le tunnel de commande.</p>
+<p>La séquence classique compte trois emails : un rappel rapide, un email de réassurance (ingrédients, avis, conseils, livraison et retours), puis une dernière relance. Nous détaillons le timing, les objets et les erreurs à éviter dans notre guide dédié : <a href="/ressources/email-panier-abandonne-cosmetique">l'email de panier abandonné pour une marque beauté</a>.</p>
+
+<h2 id="post-achat">4. Le flow post-achat</h2>
+<p>Dans la cosmétique, une première commande n'est pas une fin : c'est le début d'une routine. Le flow post-achat transforme une acheteuse ponctuelle en cliente fidèle.</p>
+<ul>
+  <li>À la livraison : comment bien utiliser le produit, dans quel ordre, à quelle fréquence.</li>
+  <li>Une à deux semaines après : les résultats à attendre et quand, pour éviter l'abandon trop rapide.</li>
+  <li>Ensuite : la demande d'avis, qui nourrit la preuve sociale de vos fiches produits.</li>
+</ul>
+<p>Différenciez les premières commandes des clientes fidèles : on n'explique pas un sérum à quelqu'un qui en est à son troisième flacon.</p>
+
+<h2 id="reachat">5. Le flow de réachat et de reconquête</h2>
+<p>Un produit cosmétique se termine. Le flow de réachat écrit au bon moment, juste avant que le flacon soit vide. Calez le délai sur la durée d'utilisation réelle de chaque produit, plutôt que sur un délai unique pour tout le catalogue.</p>
+<p>Le flow de reconquête vise les clientes qui n'ont pas commandé depuis longtemps : rappel de leur routine, nouveautés pour leur préoccupation, et éventuellement une attention (un échantillon, une miniature) plutôt qu'une remise systématique qui abîme vos marges.</p>
+
+<h2 id="ordre">Dans quel ordre les installer ?</h2>
+<p>Si vous partez de zéro : panier abandonné et bienvenue d'abord, parce qu'ils ont l'impact le plus direct. Puis post-achat, navigation abandonnée et réachat. C'est exactement le contenu de notre pack Rituel, installé en 14 jours ouvrés.</p>
+
+<h2 id="conformite">Deux règles à ne pas oublier</h2>
+<p><strong>Le consentement.</strong> En France, la prospection par email auprès de particuliers suppose leur consentement préalable, par un geste actif comme une case non pré-cochée. Seule exception : vos clientes, pour des produits analogues à ceux qu'elles ont achetés (<a href="https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique" rel="noopener" target="_blank">CNIL</a>).</p>
+<p><strong>Les allégations.</strong> Ce que vos emails disent des effets d'un produit est encadré par le <a href="https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32013R0655" rel="noopener" target="_blank">règlement (UE) n° 655/2013</a> sur les critères communs des allégations cosmétiques : véracité, éléments probants, sincérité, équité. Une relance automatique n'y échappe pas.</p>
+
+<aside class="cta">
+  <p class="eyebrow" style="color:#fff;opacity:.8">Audit offert</p>
+  <p class="cta-t">Combien de ventes vos visiteuses laissent-elles derrière elles ?</p>
+  <p>On teste votre boutique comme une cliente et on vous envoie, sous 4 jours ouvrés, une vidéo de 3 minutes avec l'estimation chiffrée de vos ventes perdues.</p>
+  <a class="btn btn-w" href="/audit">Recevoir mon audit offert</a>
+</aside>
+      <div class="related"><p class="eyebrow">À lire aussi</p><a href="/ressources/email-panier-abandonne-cosmetique">Email de panier abandonné pour une marque beauté : séquence, timing et exemples</a><a href="/ressources/klaviyo-ou-brevo-marque-beaute">Klaviyo ou Brevo : quel outil emailing pour une marque beauté sur Shopify ?</a></div>
+    </article>
+  </main>
+
+  <footer style="background: #0B0A16">
+    <div class="wrap" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; padding-top: 28px; padding-bottom: 32px; color: #A9A5C9; font-size: 13px">
+      <img src="/assets/melflore-logo-blanc.svg" alt="Melflore" width="93" height="46" style="display: block; width: 93px; height: 46px">
+      <p>Melflore · Entreprise individuelle · SIREN 104453766</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 18px">
+        <a href="/ressources" style="color: #A9A5C9; text-decoration: none">Ressources</a>
+        <a href="/mentions-legales" style="color: #A9A5C9; text-decoration: none">Mentions légales</a>
+        <a href="/cgv" style="color: #A9A5C9; text-decoration: none">CGV</a>
+        <a href="/confidentialite" style="color: #A9A5C9; text-decoration: none">Confidentialité</a>
+        <span>contact@melflore.com</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

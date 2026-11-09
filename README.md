@@ -13,6 +13,8 @@ En ligne sur [www.melflore.com](https://www.melflore.com).
 | `cgv.html` | Conditions générales de vente |
 | `confidentialite.html` | Politique de confidentialité |
 | `mentions-legales.html` | Mentions légales |
+| `ressources/` | Hub et articles de blog (SEO) |
+| `404.html` | Page d'erreur |
 | `assets/` | Logo, icônes, photo, polices Inter et Inter Tight (hébergées localement) |
 
 Site 100 % statique : HTML et CSS, aucune étape de build.
