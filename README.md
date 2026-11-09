@@ -30,3 +30,13 @@ Site 100 % statique : HTML et CSS, aucune étape de build.
 
 Modifier les fichiers HTML puis pousser sur `main` : Netlify redéploie automatiquement.
 Tester en local : `python3 -m http.server` à la racine, puis ouvrir http://localhost:8000.
+
+## Newsletter (Klaviyo)
+
+Les formulaires « La Lettre Melflore » (pied de page de toutes les pages et page `/newsletter`) envoient chaque inscription :
+- à Netlify Forms (formulaire `newsletter`), toujours, en secours ;
+- à Klaviyo dès que `companyId` (clé publique « Site ID ») et `listId` sont renseignés en haut de `assets/site.js`.
+
+## Finitions communes
+
+`assets/site.css` et `assets/site.js` gèrent l'en-tête collant, les apparitions au défilement, le bouton d'audit collant sur mobile, la barre de lecture des articles et la newsletter. Après une régénération des articles, relancer le script de finitions (`polish.py`) pour remettre le pied de page commun.
