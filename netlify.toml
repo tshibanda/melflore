@@ -10,3 +10,13 @@
   for = "/ressources/*.pdf"
   [headers.values]
     X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/paiement"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/paiement.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"

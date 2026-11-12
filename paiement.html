@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Paiement sécurisé | Melflore</title>
+<meta name="description" content="Réglez votre accompagnement Melflore en ligne par carte bancaire, en toute sécurité avec Stripe.">
+<link rel="canonical" href="https://melflore.com/paiement">
+<meta property="og:title" content="Paiement sécurisé | Melflore">
+<meta property="og:description" content="Réglez votre accompagnement Melflore en ligne par carte bancaire, en toute sécurité avec Stripe.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://melflore.com/paiement">
+<meta property="og:image" content="https://melflore.com/assets/og-melflore.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Melflore, relances email pour marques beauté sur Shopify">
+<meta property="og:site_name" content="Melflore">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F4F1FB">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts.css?v=8e65b1b2">
+<link rel="stylesheet" href="/assets/site.css?v=9779a4fe">
+<style>
+body{margin:0;background:#F4F1FB;font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#4B4870;-webkit-font-smoothing:antialiased}
+a{color:#6A53EE}a:hover{color:#4E37D6}
+h1,h2,h3{font-family:"Inter Tight","Inter",-apple-system,sans-serif;color:#15124F;margin:0;text-wrap:balance;letter-spacing:-0.02em}
+p{margin:0}
+.wrap{width:100%;max-width:1120px;margin:0 auto;box-sizing:border-box;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.doc{background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.95);border-radius:20px;box-shadow:0 1px 2px rgba(40,30,110,.05),0 14px 36px rgba(70,50,170,.07)}
+.doc section{display:flex;flex-direction:column;gap:12px;padding-top:28px;border-top:1px solid #ECE8F8}
+.doc h2{font-size:20px;font-weight:600}
+.doc p,.doc li{font-size:15px;line-height:1.7}
+.doc ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6A53EE}
+.toc a{color:#4B4870;text-decoration:none;font-size:14px;line-height:1.5}
+.toc a:hover{color:#6A53EE}
+.layout{display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start}
+.ph{background:#EEEAFD;color:#4E37D6;border-radius:4px;padding:0 4px}
+@media (max-width:640px){.h1{font-size:36px!important}}
+</style>
+<style>button.btn{border:0;cursor:pointer;font-family:inherit}.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}</style>
+<script src="/assets/site.js?v=4f3e271d" defer></script>
+<script data-goatcounter="https://melflore.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<style>
+.pay{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.pay .card{padding:26px;display:flex;flex-direction:column;gap:12px}
+.pay .card h2{font:600 20px 'Inter Tight',sans-serif;color:#15124F}
+.pay .card .price{font:600 36px 'Inter Tight',sans-serif;color:#15124F;font-variant-numeric:tabular-nums}
+.pay .card p{font-size:14px;line-height:1.55;color:#4B4870}
+.pay .card .btn{margin-top:auto;justify-content:center;text-align:center}
+.wide{padding:26px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}
+.wide h2{font:600 20px 'Inter Tight',sans-serif;color:#15124F}
+.wide p{font-size:14px;line-height:1.55;color:#4B4870;max-width:560px}
+.secure{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:13px;color:#6E6B91}
+.secure span::before{content:"✓ ";color:#6F58F2;font-weight:700}
+@media (max-width:900px){.pay{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="page" style="position: relative; overflow: hidden; background: #F4F1FB; min-height: 100vh">
+  <div aria-hidden="true" style="position: absolute; top: -220px; right: -180px; width: 720px; height: 720px; border-radius: 50%; background: radial-gradient(circle, rgba(150,132,255,.4) 0%, rgba(150,132,255,0) 65%); pointer-events: none"></div>
+
+  <header class="wrap" style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 22px; padding-bottom: 22px">
+    <a href="/" aria-label="Melflore, accueil" style="display: inline-flex"><img src="/assets/melflore-logo.svg" alt="Melflore" width="118" height="58" style="display: block; width: 118px; height: 58px"></a>
+    <a href="/" style="color: #4B4870; text-decoration: none; font-size: 14px">← Retour au site</a>
+  </header>
+
+  <main class="wrap" style="position: relative; display: flex; flex-direction: column; gap: 40px; padding-top: 32px; padding-bottom: 112px">
+    <section class="wrap" style="padding: 0; display: flex; flex-direction: column; gap: 14px; max-width: 760px">
+      <p class="eyebrow">Paiement sécurisé</p>
+      <h1 class="h1" style="font-size: 48px; line-height: 1.06; font-weight: 600">Régler votre <span class="grad grad-anim">accompagnement</span></h1>
+      <p style="font-size: 17px; line-height: 1.65">Cette page est destinée aux marques qui ont validé leur devis. Le paiement par carte est traité par Stripe : Melflore ne voit jamais vos coordonnées bancaires. Votre facture vous est envoyée sous 48 h.</p>
+      <div class="secure"><span>Paiement chiffré par Stripe</span><span>Carte, Apple Pay, Google Pay</span><span>Reçu immédiat par email</span><span>TVA non applicable, art. 293 B du CGI</span></div>
+    </section>
+
+    <section class="pay" aria-label="Packs">
+        <div class="glass card">
+          <h2>Essentiel</h2>
+          <p class="price">990 €</p>
+          <p>3 relances (bienvenue, panier abandonné, post-achat), ~6 emails, en ligne en 7 jours ouvrés.</p>
+          <a class="btn" href="https://buy.stripe.com/cNiaEW4XCags9TnaxF3Ru00" rel="noopener" data-pay="Essentiel">Payer l'Essentiel</a>
+        </div>
+        <div class="glass card">
+          <h2>Rituel</h2>
+          <p class="price">1 990 €</p>
+          <p>5 relances personnalisées selon la peau, ~12 emails, garantie résultat, en ligne en 14 jours ouvrés.</p>
+          <a class="btn" href="https://buy.stripe.com/aFaeVcahW9coaXr35d3Ru01" rel="noopener" data-pay="Rituel">Payer le Rituel</a>
+        </div>
+        <div class="glass card">
+          <h2>Rituel+</h2>
+          <p class="price">3 490 €</p>
+          <p>9 relances, ~22 emails, design sur mesure, 2 mois de suivi inclus, en ligne en 21 jours ouvrés.</p>
+          <a class="btn" href="https://buy.stripe.com/eVqfZg3Ty3S42qVcFN3Ru02" rel="noopener" data-pay="Rituel+">Payer le Rituel+</a>
+        </div>
+    </section>
+
+    <section class="glass wide">
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <h2>Suivi mensuel · 690 € / mois</h2>
+        <p>2 campagnes par mois, optimisation continue des relances et rapport mensuel. Prélèvement automatique sur carte, sans engagement : résiliation par simple email à contact@melflore.com, avec un préavis de 30 jours.</p>
+      </div>
+      <a class="btn" href="https://buy.stripe.com/7sY14m4XC9cofdH9tB3Ru04" rel="noopener" data-pay="Suivi">Souscrire au suivi</a>
+    </section>
+
+    <section class="glass wide">
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <h2>Paiement en 3 fois, acompte ou facture</h2>
+        <p>Indiquez le montant de l'échéance ou de la facture, et son numéro. Vous préférez le virement ? Les coordonnées bancaires figurent sur chaque facture.</p>
+      </div>
+      <a class="btn" href="https://buy.stripe.com/00w5kC0Hm2O0aXreNV3Ru05" rel="noopener" data-pay="Facture">Régler une facture</a>
+    </section>
+
+    <p style="font-size: 13px; color: #6E6B91; max-width: 760px">En payant, vous acceptez nos <a href="/cgv">conditions générales de vente</a>. Vos données de paiement sont traitées par Stripe, voir notre <a href="/confidentialite">politique de confidentialité</a>. Une question avant de payer : <a href="mailto:contact@melflore.com">contact@melflore.com</a>.</p>
+  </main>
+
+  <footer style="background: #0B0A16; border-top: 1px solid rgba(255,255,255,.08)">
+    <div class="wrap" style="padding-top: 64px; padding-bottom: 8px">
+      <div class="nl">
+        <div style="position: relative; z-index: 1">
+          <p class="eyebrow">La Lettre Melflore</p>
+          <h2 style="margin-top: 10px">Une idée d'email qui fait vendre, tous les 15 jours.</h2>
+          <p style="margin-top: 10px">Pour les fondatrices et fondateurs de marques beauté sur Shopify : un exemple réel décortiqué, un chiffre utile, une action à faire en 10 minutes dans Klaviyo ou Brevo.</p>
+          <div class="nl-perks"><span>Cadeau : la checklist des 5 flows (PDF)</span><span>2 minutes de lecture</span><span>Désinscription en un clic</span></div>
+        </div>
+        <form class="nl-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="site_web" action="/merci" novalidate>
+          <input type="hidden" name="form-name" value="newsletter">
+          <p class="hp" aria-hidden="true"><label>Ne pas remplir <input name="site_web" tabindex="-1" autocomplete="off"></label></p>
+          <label for="nl-email-d" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Votre email professionnel</label>
+          <div class="nl-row">
+            <input id="nl-email-d" name="email" type="email" autocomplete="email" placeholder="vous@votre-marque.fr" required>
+            <button class="btn" type="submit">Je m'inscris</button>
+          </div>
+          <p class="nl-msg" role="status" aria-live="polite"></p>
+          <p class="nl-note">En vous inscrivant, vous acceptez de recevoir la Lettre Melflore. Vos données restent chez nous : <a href="/confidentialite#newsletter">confidentialité</a>.</p>
+        </form>
+      </div>
+    </div>
+    <div class="wrap" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 18px; padding-top: 36px; padding-bottom: 36px; color: #A9A5C9; font-size: 13px">
+      <div style="display: flex; align-items: center; gap: 18px; flex-wrap: wrap">
+        <img src="/assets/melflore-logo-blanc.svg" alt="Melflore" width="93" height="46" loading="lazy" style="display: block; width: 93px; height: 46px">
+        <p>Melflore · Entreprise individuelle · SIREN 104453766</p>
+      </div>
+      <div class="foot-links" style="display: flex; flex-wrap: wrap; align-items: center; gap: 18px">
+        <a href="/ressources">Ressources</a>
+        <a href="/exemples">Exemples</a>
+        <a href="/calculateur">Calculateur</a>
+        <a href="/newsletter">Newsletter</a>
+        <a href="/mentions-legales">Mentions légales</a>
+        <a href="/cgv">CGV</a>
+        <a href="/confidentialite">Confidentialité</a>
+        <a href="mailto:contact@melflore.com">contact@melflore.com</a>
+        <span class="foot-social">
+          <a href="https://www.instagram.com/melflore.agency/" target="_blank" rel="noopener" aria-label="Melflore sur Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.facebook.com/profile.php?id=61596549353819" target="_blank" rel="noopener" aria-label="Melflore sur Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21h3z"/></svg></a>
+        </span>
+      </div>
+    </div>
+  </footer>
+</div>
+<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-pay]');if(a&&window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:'clic-paiement-'+a.dataset.pay.toLowerCase().replace(/[^a-z]+/g,''),title:'Clic paiement '+a.dataset.pay,event:true})});</script>
+</body>
+</html>
