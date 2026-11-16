@@ -20,3 +20,18 @@
   for = "/paiement.html"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/commande"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/commande.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/commande/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"

@@ -120,7 +120,15 @@
         method: "POST", keepalive: true,
         headers: { "Content-Type": "application/json", revision: "2024-10-15" },
         body: JSON.stringify(payload)
-      });
+      }).catch(function () {});
+    } catch (e) {}
+  }
+  window.MF_kpost = kpost;
+  function saveAudit(f) {
+    try {
+      var v = function (n) { return f[n] ? String(f[n].value || "").trim().slice(0, 300) : ""; };
+      var x = JSON.stringify({ prenom: v("prenom"), email: v("email"), url: v("url"), ca: v("ca"), outil: v("outil"), date: Date.now() });
+      sessionStorage.setItem("mf_audit", x); localStorage.setItem("mf_audit", x);
     } catch (e) {}
   }
   function sendAuditToKlaviyo(f) {
@@ -144,7 +152,7 @@
   d.querySelectorAll('form[name="audit"]').forEach(function (f) {
     f.addEventListener("submit", function () {
       var b = f.querySelector('button[type="submit"]');
-      if (b && f.checkValidity()) { track("demande-audit", "Demande d'audit envoyée"); sendAuditToKlaviyo(f); b.disabled = true; b.dataset.label = b.innerHTML; b.textContent = "Envoi en cours…"; }
+      if (b && f.checkValidity()) { track("demande-audit", "Demande d'audit envoyée"); sendAuditToKlaviyo(f); saveAudit(f); b.disabled = true; b.dataset.label = b.innerHTML; b.textContent = "Envoi en cours…"; }
     });
     f.addEventListener("invalid", function (e) {
       var el = e.target;

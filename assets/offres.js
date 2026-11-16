@@ -1,0 +1,142 @@
+/* Offres Melflore : source unique des prix, contenus et liens de paiement Stripe.
+   Quand les 2 places de l'offre de lancement sont prises, passer LANCEMENT_OUVERT à false. */
+(function () {
+  var LANCEMENT_OUVERT = true;
+  var STRIPE_FACTURE = "https://buy.stripe.com/00w5kC0Hm2O0aXreNV3Ru05";
+
+  var O = {
+    essentiel: {
+      id: "essentiel",
+      nom: "Essentiel",
+      article: "l'Essentiel",
+      accroche: "Pour démarrer l'email simplement",
+      prix: 990,
+      tiers: [330, 330, 330],
+      delai: "7 jours ouvrés",
+      inclus: [
+        "3 relances : bienvenue, panier abandonné, post-achat",
+        "~6 emails écrits dans votre ton",
+        "Pop-up d'inscription simple",
+        "Délivrabilité configurée",
+        "Rapport à 30 jours"
+      ],
+      exclus: ["Personnalisation selon la peau", "Garantie résultat"],
+      garantie: "",
+      stripe: "https://buy.stripe.com/cNiaEW4XCags9TnaxF3Ru00"
+    },
+    rituel: {
+      id: "rituel",
+      nom: "Rituel",
+      article: "le Rituel",
+      accroche: "Votre conseillère beauté complète",
+      prix: 1990,
+      tiers: [663, 663, 664],
+      delai: "14 jours ouvrés",
+      inclus: [
+        "5 relances : bienvenue, navigation abandonnée, panier abandonné, post-achat, reconquête",
+        "~12 emails personnalisés selon la peau",
+        "Pop-up avec la question de peau",
+        "Segmentation par préoccupation",
+        "Rapport chiffré à 30 jours"
+      ],
+      exclus: [],
+      garantie: "Garantie résultat : pas de commande générée à 30 jours, on continue gratuitement jusqu'à 60 jours de plus.",
+      stripe: "https://buy.stripe.com/aFaeVcahW9coaXr35d3Ru01"
+    },
+    rituelplus: {
+      id: "rituelplus",
+      nom: "Rituel+",
+      article: "le Rituel+",
+      accroche: "Pour les marques qui veulent aller plus loin",
+      prix: 3490,
+      tiers: [1163, 1163, 1164],
+      delai: "21 jours ouvrés",
+      inclus: [
+        "Tout le Rituel : 5 relances personnalisées selon la peau",
+        "4 relances avancées : abandon au paiement, réachat par produit, demande d'avis, clientes VIP",
+        "~22 emails au total, design d'email sur mesure",
+        "Segmentation selon l'historique d'achat",
+        "Tests A/B sur 2 relances",
+        "Rapports à 30 et 90 jours",
+        "2 mois de Suivi mensuel inclus (valeur 1 380 €)"
+      ],
+      exclus: [],
+      garantie: "Garantie résultat prolongée : le suivi continue jusqu'au résultat.",
+      stripe: "https://buy.stripe.com/eVqfZg3Ty3S42qVcFN3Ru02"
+    },
+    lancement: {
+      id: "lancement",
+      nom: "Rituel · offre de lancement",
+      article: "le Rituel en offre de lancement",
+      accroche: "Le Rituel complet, à moitié prix",
+      prix: 990,
+      prixBarre: 1990,
+      tiers: [330, 330, 330],
+      delai: "14 jours ouvrés",
+      inclus: [
+        "Tout le Rituel : 5 relances personnalisées selon la peau",
+        "~12 emails personnalisés selon la peau",
+        "Pop-up avec la question de peau",
+        "Segmentation par préoccupation",
+        "Rapport chiffré à 30 jours"
+      ],
+      exclus: [],
+      condition: "Réservée aux 2 premières marques, en échange d'une étude de cas que vous validez avant publication.",
+      garantie: "Garantie résultat : pas de commande générée à 30 jours, on continue gratuitement jusqu'à 60 jours de plus.",
+      stripe: "https://buy.stripe.com/9B6dR8fCgdsE2qV0X53Ru03",
+      ouvert: LANCEMENT_OUVERT
+    },
+    suivi: {
+      id: "suivi",
+      nom: "Suivi mensuel",
+      article: "le Suivi mensuel",
+      accroche: "Vos relances optimisées chaque mois",
+      prix: 690,
+      mensuel: true,
+      tiers: null,
+      delai: "",
+      inclus: [
+        "2 campagnes email par mois",
+        "Optimisation continue de vos relances",
+        "Rapport mensuel du chiffre d'affaires généré",
+        "Disponible avec tous les packs"
+      ],
+      exclus: [],
+      garantie: "Sans engagement : résiliation par simple email, avec un préavis de 30 jours.",
+      stripe: "https://buy.stripe.com/7sY14m4XC9cofdH9tB3Ru04"
+    }
+  };
+
+  function eur(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " ") + " €"; }
+
+  function get(id) {
+    var o = O[id];
+    if (!o) return null;
+    if (o.id === "lancement" && !o.ouvert) return O.rituel;
+    return o;
+  }
+
+  function ref() {
+    var t = Date.now().toString(36).toUpperCase().slice(-5);
+    var r = Math.random().toString(36).slice(2, 5).toUpperCase();
+    return "MF-" + t + r;
+  }
+
+  function store(key, val) {
+    try { if (val === undefined) { var v = sessionStorage.getItem(key) || localStorage.getItem(key); return v ? JSON.parse(v) : null; }
+      sessionStorage.setItem(key, JSON.stringify(val)); localStorage.setItem(key, JSON.stringify(val)); } catch (e) { return null; }
+  }
+
+  // Recommandation après une demande d'audit, selon le chiffre d'affaires indiqué
+  function recommander(ca) {
+    ca = String(ca || "");
+    if (/Moins de 10/.test(ca)) return { id: "essentiel", alt: LANCEMENT_OUVERT ? "lancement" : "rituel",
+      pourquoi: "À votre stade, les 3 relances de base sont celles qui rapportent le plus vite : elles accueillent chaque inscrite et rappellent chaque panier." };
+    if (/Plus de 150/.test(ca)) return { id: "rituelplus", alt: LANCEMENT_OUVERT ? "lancement" : "rituel",
+      pourquoi: "Avec votre volume, chaque relance compte : les relances avancées, les tests A/B et deux mois de suivi font la différence sur un large catalogue." };
+    return { id: LANCEMENT_OUVERT ? "lancement" : "rituel", alt: "essentiel",
+      pourquoi: "Avec votre trafic, la personnalisation selon la peau et la garantie résultat font la différence. C'est le pack que nous recommandons le plus souvent." };
+  }
+
+  window.MF = { offres: O, get: get, eur: eur, ref: ref, store: store, recommander: recommander, stripeFacture: STRIPE_FACTURE, lancementOuvert: LANCEMENT_OUVERT };
+})();
