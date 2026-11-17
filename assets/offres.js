@@ -86,6 +86,26 @@
       stripe: "https://buy.stripe.com/9B6dR8fCgdsE2qV0X53Ru03",
       ouvert: LANCEMENT_OUVERT
     },
+    pilote: {
+      id: "pilote",
+      nom: "Relance panier 72 h",
+      article: "la relance panier en 72 h",
+      accroche: "Une seule relance, celle qui rapporte le plus vite",
+      prix: 290,
+      tiers: null,
+      libre: true,
+      delai: "72 h ouvrées",
+      inclus: [
+        "Relance de panier abandonné en 2 emails, écrits dans votre ton",
+        "Installée dans votre Klaviyo, Brevo ou Shopify Email",
+        "Test complet avant mise en ligne",
+        "Rapport chiffré à 30 jours",
+        "Déduite du prix si vous passez à un pack dans les 60 jours"
+      ],
+      exclus: [],
+      garantie: "Pas de vente récupérée à 30 jours : remboursée.",
+      stripe: STRIPE_FACTURE
+    },
     suivi: {
       id: "suivi",
       nom: "Suivi mensuel",

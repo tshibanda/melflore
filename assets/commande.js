@@ -11,7 +11,7 @@
   function prixHTML(o, grand) {
     var cls = grand ? "o-price o-price-l" : "o-price";
     var h = '<p class="' + cls + '">' + (o.prixBarre ? '<s>' + M.eur(o.prixBarre) + '</s> ' : "") + M.eur(o.prix) + (o.mensuel ? '<span> / mois</span>' : "") + "</p>";
-    var sub = o.mensuel ? "TVA non applicable · sans engagement" : "TVA non applicable · ou 3 × " + M.eur(o.tiers[0]) + " sans frais";
+    var sub = o.mensuel ? "TVA non applicable · sans engagement" : !o.tiers ? "TVA non applicable · paiement en une fois" : "TVA non applicable · ou 3 × " + M.eur(o.tiers[0]) + " sans frais";
     return h + '<p class="o-sub">' + sub + "</p>";
   }
   function listeHTML(o) {
@@ -144,11 +144,12 @@
       } else {
         btn.href = stripeUrl(o.stripe);
         btn.querySelector(".lbl").textContent = o.mensuel ? "Souscrire : " + M.eur(o.prix) + " / mois" : "Payer " + M.eur(o.prix) + " par carte";
-        help.style.display = "none";
+        if (o.libre) { help.innerHTML = "Sur la page Stripe, saisissez le montant <strong>" + M.eur(o.prix) + "</strong> et la référence <strong>" + esc(cl.ref) + "</strong>."; help.style.display = "block"; }
+        else help.style.display = "none";
       }
       btn.dataset.mode = m;
     }
-    if (o.mensuel) { modes.style.display = "none"; setMode("1x"); }
+    if (o.mensuel || !o.tiers) { modes.style.display = "none"; setMode("1x"); }
     else {
       modes.innerHTML = '<label class="mode"><input type="radio" name="mode" value="1x" checked><span><strong>En une fois</strong><em>' + M.eur(o.prix) + "</em></span></label>" +
         '<label class="mode"><input type="radio" name="mode" value="3x"><span><strong>En 3 fois sans frais</strong><em>3 × ' + M.eur(o.tiers[0]) + "</em></span></label>";
