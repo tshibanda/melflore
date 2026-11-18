@@ -3,7 +3,7 @@
 (function () {
   var LANCEMENT_OUVERT = true;
   var STRIPE_FACTURE = "https://buy.stripe.com/00w5kC0Hm2O0aXreNV3Ru05";
-  /* Liens Stripe de la grille du 18/11/2026. Après paiement, chaque lien redirige vers /commande/lancement?offre=<id>.
+  /* Liens Stripe. Après paiement, chaque lien redirige vers /commande/lancement?offre=<id>.
      STRIPE_FACTURE (montant libre) sert au paiement en 3 fois et aux factures. */
 
   var O = {
