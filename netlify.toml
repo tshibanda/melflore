@@ -35,3 +35,13 @@
   for = "/commande/*"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
+
+[[redirects]]
+  from = "/a/:marque"
+  to = "/audit.html"
+  status = 200
+
+[[headers]]
+  for = "/a/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"

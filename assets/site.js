@@ -155,6 +155,10 @@
     }
   }
 
+  // Lien d'audit personnel envoyé en prospection : melflore.com/a/<marque> (même page que /audit)
+  var lienPerso = location.pathname.match(/^\/a\/([a-z0-9-]{1,60})\/?$/i);
+  if (lienPerso) d.querySelectorAll('form[name="audit"] input[name="source"]').forEach(function (i) { i.value = "lien-" + lienPerso[1].toLowerCase(); });
+
   // Formulaire d'audit : erreurs lisibles et état d'envoi
   d.querySelectorAll('form[name="audit"]').forEach(function (f) {
     f.addEventListener("submit", function () {
