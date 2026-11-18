@@ -111,7 +111,7 @@
 
     var steps = [
       ["Paiement", "Reçu Stripe envoyé immédiatement par email. Facture sous 48 h."],
-      ["Sous 1 jour ouvré", "On vous écrit pour fixer l'appel de lancement (45 min) et vous demander les accès."],
+      ["Juste après", "Vous choisissez le créneau de votre appel de lancement (45 min) et la liste des accès à préparer s'affiche."],
       [o.mensuel ? "Chaque mois" : "En " + o.delai, o.mensuel ? "2 campagnes, l'optimisation des relances et le rapport mensuel." : "Vos relances sont en ligne, après validation de chaque texte par vous."],
       [o.mensuel ? "Sans engagement" : "À 30 jours", o.mensuel ? "Résiliation par simple email, avec un préavis de 30 jours." : "Le rapport chiffré du chiffre d'affaires généré, relance par relance."]
     ];

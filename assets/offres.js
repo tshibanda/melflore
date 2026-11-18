@@ -3,9 +3,8 @@
 (function () {
   var LANCEMENT_OUVERT = true;
   var STRIPE_FACTURE = "https://buy.stripe.com/00w5kC0Hm2O0aXreNV3Ru05";
-  /* Grille du 18/11/2026 : les anciens liens Stripe à prix fixe (990, 1 990, 3 490, 990, 690 €/mois) ne correspondent plus.
-     En attendant les nouveaux liens, toutes les offres passent par le lien à montant libre (libre: true).
-     Une fois les liens créés dans Stripe, remplacer STRIPE_FACTURE par le lien de l'offre et retirer libre: true. */
+  /* Liens Stripe de la grille du 18/11/2026. Après paiement, chaque lien redirige vers /commande/lancement?offre=<id>.
+     STRIPE_FACTURE (montant libre) sert au paiement en 3 fois et aux factures. */
 
   var O = {
     essentiel: {
@@ -25,8 +24,7 @@
       ],
       exclus: ["Personnalisation selon la peau", "Garantie résultat"],
       garantie: "",
-      libre: true,
-      stripe: STRIPE_FACTURE
+      stripe: "https://buy.stripe.com/4gM00i0HmgEQ2qV9tB3Ru07"
     },
     rituel: {
       id: "rituel",
@@ -45,8 +43,7 @@
       ],
       exclus: [],
       garantie: "Garantie résultat : pas de commande générée à 30 jours, on continue gratuitement jusqu'à 60 jours de plus.",
-      libre: true,
-      stripe: STRIPE_FACTURE
+      stripe: "https://buy.stripe.com/8x25kCdu80FS4z39tB3Ru08"
     },
     rituelplus: {
       id: "rituelplus",
@@ -67,8 +64,7 @@
       ],
       exclus: [],
       garantie: "Garantie résultat prolongée : le suivi continue jusqu'au résultat.",
-      libre: true,
-      stripe: STRIPE_FACTURE
+      stripe: "https://buy.stripe.com/7sYdR8cq4gEQ6Hb7lt3Ru09"
     },
     lancement: {
       id: "lancement",
@@ -89,8 +85,7 @@
       exclus: [],
       condition: "Réservée aux 2 premières marques, en échange d'une étude de cas que vous validez avant publication.",
       garantie: "Garantie résultat : pas de commande générée à 30 jours, on continue gratuitement jusqu'à 60 jours de plus.",
-      libre: true,
-      stripe: STRIPE_FACTURE,
+      stripe: "https://buy.stripe.com/dRmdR8bm060cc1vcFN3Ru0a",
       ouvert: LANCEMENT_OUVERT
     },
     pilote: {
@@ -100,7 +95,6 @@
       accroche: "Une seule relance, celle qui rapporte le plus vite",
       prix: 290,
       tiers: null,
-      libre: true,
       delai: "48 h ouvrées",
       inclus: [
         "Relance de panier abandonné en 3 emails (1 h, 24 h, 72 h), écrits dans votre ton",
@@ -112,7 +106,7 @@
       ],
       exclus: [],
       garantie: "Pas de vente récupérée à 30 jours : remboursée.",
-      stripe: STRIPE_FACTURE
+      stripe: "https://buy.stripe.com/eVq4gy1Lq88kfdH7lt3Ru06"
     },
     suivi: {
       id: "suivi",
@@ -131,8 +125,7 @@
       ],
       exclus: [],
       garantie: "Sans engagement : résiliation par simple email, avec un préavis de 30 jours.",
-      libre: true,
-      stripe: STRIPE_FACTURE
+      stripe: "https://buy.stripe.com/7sY5kC89O74ge9DcFN3Ru0b"
     }
   };
 
