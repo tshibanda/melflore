@@ -23,7 +23,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/fonts.css?v=8e65b1b2">
-<link rel="stylesheet" href="/assets/site.css?v=9779a4fe">
+<link rel="stylesheet" href="/assets/site.css?v=3fc8d26e">
 <style>
 body{margin:0;background:#F4F1FB;font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#4B4870;-webkit-font-smoothing:antialiased}
 a{color:#6A53EE}a:hover{color:#4E37D6}
@@ -43,7 +43,7 @@ p{margin:0}
 @media (max-width:640px){.h1{font-size:36px!important}}
 </style>
 <style>button.btn{border:0;cursor:pointer;font-family:inherit}.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}</style>
-<script src="/assets/site.js?v=2c464c21" defer></script>
+<script src="/assets/site.js?v=219dcad2" defer></script>
 <script data-goatcounter="https://melflore.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -72,7 +72,7 @@ p{margin:0}
         <h2>Données collectées</h2>
         <ul>
           <li><strong>Formulaire d'audit</strong> : URL de la boutique, prénom, email professionnel, tranche de chiffre d'affaires, outil email utilisé et message éventuel.</li>
-          <li id="newsletter"><strong>Newsletter</strong> : adresse email, date d'inscription, page d'inscription, ouvertures et clics sur les emails envoyés.</li>
+          <li id="newsletter"><strong>Newsletter</strong> : adresse email, date d'inscription, page d'inscription et votre choix concernant la mesure d'audience. Si vous l'acceptez (case facultative au moment de l'inscription), nous mesurons aussi l'ouverture des Lettres et les clics sur leurs liens. Sans votre accord, rien n'est mesuré. Vous pouvez changer d'avis à tout moment depuis le lien de gestion de vos préférences présent dans chaque Lettre, ou en écrivant à contact@melflore.com.</li>
           <li id="statistiques"><strong>Statistiques de visite</strong> : pages vues, page de provenance, type d'appareil et pays, mesurés avec GoatCounter, un outil sans cookie qui ne conserve pas votre adresse IP et ne permet pas de vous identifier.</li>
           <li><strong>Prospection</strong> : nom, fonction, email professionnel et informations publiques sur la boutique (site, publicités visibles, technologies utilisées).</li>
           <li><strong>Clients</strong> : coordonnées professionnelles, échanges, devis, factures et accès fournis pour la prestation.</li>
@@ -86,7 +86,8 @@ p{margin:0}
             <thead><tr><th>Finalité</th><th>Base légale</th><th>Durée de conservation</th></tr></thead>
             <tbody>
               <tr><td>Réaliser l'audit demandé et vous recontacter à ce sujet</td><td>Votre consentement</td><td>3 ans après le dernier contact</td></tr>
-              <tr><td>Envoi de la Lettre Melflore</td><td>Votre consentement</td><td>Jusqu'à la désinscription, ou 3 ans sans ouverture</td></tr>
+              <tr><td>Envoi de la Lettre Melflore</td><td>Votre consentement</td><td>Jusqu'à la désinscription, ou 3 ans sans nouvelle de votre part</td></tr>
+              <tr><td>Mesure de l'ouverture et des clics de la Lettre</td><td>Votre consentement, distinct de l'inscription</td><td>Jusqu'au retrait de votre accord ou à la désinscription</td></tr>
               <tr><td>Prospection commerciale auprès de professionnels</td><td>Intérêt légitime de Melflore</td><td>3 ans après le dernier contact de votre part</td></tr>
               <tr><td>Exécution des prestations et relation client</td><td>Exécution du contrat</td><td>Durée de la relation, puis 3 ans</td></tr>
               <tr><td>Facturation et comptabilité</td><td>Obligation légale</td><td>10 ans</td></tr>
@@ -145,6 +146,7 @@ p{margin:0}
             <button class="btn" type="submit">Je m'inscris</button>
           </div>
           <p class="nl-msg" role="status" aria-live="polite"></p>
+          <label class="nl-consent"><input type="checkbox" name="mesure" value="oui"><span>J'accepte que Melflore mesure l'ouverture des Lettres et les clics sur leurs liens, pour les améliorer. Facultatif.</span></label>
           <p class="nl-note">En vous inscrivant, vous acceptez de recevoir la Lettre Melflore. Vos données restent chez nous : <a href="/confidentialite#newsletter">confidentialité</a>.</p>
         </form>
       </div>

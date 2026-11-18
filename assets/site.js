@@ -3,6 +3,13 @@
   // Klaviyo : clé publique (Site ID) et liste « Lettre Melflore » (double opt-in).
   // Chaque inscription est aussi enregistrée dans Netlify Forms (formulaire « newsletter »), en secours.
   var KLAVIYO = { companyId: "VTL8z3", listId: "Tk8FMS" };
+  var KLAVIYO_REVISION = "2026-10-15";
+  // Mesure des ouvertures et des clics : seulement avec l'accord explicite de l'abonné (recommandation CNIL du 14/04/2026).
+  // Sans case cochée, le suivi est refusé dans Klaviyo (UNSUBSCRIBED) et rien n'est mesuré pour cette personne.
+  function consentements(mesure) {
+    var c = mesure ? "SUBSCRIBED" : "UNSUBSCRIBED";
+    return { marketing: { consent: "SUBSCRIBED" }, open_tracking: { consent: c }, click_tracking: { consent: c } };
+  }
 
   var d = document, root = d.documentElement;
   root.classList.add("js");
@@ -118,7 +125,7 @@
     try {
       fetch("https://a.klaviyo.com/client/" + path + "/?company_id=" + encodeURIComponent(KLAVIYO.companyId), {
         method: "POST", keepalive: true,
-        headers: { "Content-Type": "application/json", revision: "2024-10-15" },
+        headers: { "Content-Type": "application/vnd.api+json", revision: KLAVIYO_REVISION },
         body: JSON.stringify(payload)
       }).catch(function () {});
     } catch (e) {}
@@ -143,7 +150,7 @@
     if (f.newsletter && f.newsletter.checked && KLAVIYO.listId) {
       kpost("subscriptions", { data: { type: "subscription", attributes: {
         custom_source: "Formulaire d'audit",
-        profile: { data: { type: "profile", attributes: { email: email } } }
+        profile: { data: { type: "profile", attributes: { email: email, properties: { mesure_ouverture: "non" }, subscriptions: { email: consentements(false) } } } }
       }, relationships: { list: { data: { type: "list", id: KLAVIYO.listId } } } } });
     }
   }
@@ -203,6 +210,7 @@
       msg.classList.remove("err");
       msg.textContent = "Inscription en cours…";
       btn.disabled = true;
+      var mesure = !!(form.mesure && form.mesure.checked);
       var fd = new URLSearchParams(new FormData(form));
       fd.set("page", location.pathname);
       var jobs = [post("/", fd.toString(), { "Content-Type": "application/x-www-form-urlencoded" })];
@@ -210,9 +218,9 @@
         jobs.push(post("https://a.klaviyo.com/client/subscriptions/?company_id=" + encodeURIComponent(KLAVIYO.companyId),
           JSON.stringify({ data: { type: "subscription", attributes: {
             custom_source: "melflore.com " + location.pathname,
-            profile: { data: { type: "profile", attributes: { email: email, properties: { source_page: location.pathname } } } }
+            profile: { data: { type: "profile", attributes: { email: email, properties: { source_page: location.pathname, mesure_ouverture: mesure ? "oui" : "non" }, subscriptions: { email: consentements(mesure) } } } }
           }, relationships: { list: { data: { type: "list", id: KLAVIYO.listId } } } } }),
-          { "Content-Type": "application/json", revision: "2024-10-15" }));
+          { "Content-Type": "application/vnd.api+json", revision: KLAVIYO_REVISION }));
       }
       Promise.allSettled(jobs).then(function (res) {
         var ok = res.some(function (r) { return r.status === "fulfilled"; });

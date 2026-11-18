@@ -71,6 +71,9 @@ details.glass:hover{background:rgba(255,255,255,.86)}
 .nl-row:focus-within{border-color:#B7AAFF;box-shadow:0 0 0 3px rgba(183,170,255,.25)}
 .nl-note{font-size:12px!important;color:#A9A5C9!important}
 .nl-note a{color:#C9C5E6}
+.nl-consent{display:flex;gap:10px;align-items:flex-start;font-size:12px;line-height:1.5;color:#C9C5E6;cursor:pointer}
+.nl-consent input{flex:none;width:16px;height:16px;margin:1px 0 0;accent-color:#9585FB}
+.nl.light .nl-consent{color:#4B4870}.nl.light .nl-consent input{accent-color:#6F58F2}
 .nl-msg{font-size:14px!important;color:#fff!important;min-height:1em}
 .nl-msg.err{color:#FFB4C8!important}
 .nl.light{background:rgba(255,255,255,.72);border:1px solid #fff;box-shadow:0 14px 36px rgba(70,50,170,.08)}
