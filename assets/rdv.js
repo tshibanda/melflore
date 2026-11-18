@@ -2,14 +2,11 @@
    Pour changer les horaires proposés, modifier CRENEAUX ci-dessous (heure de Paris). */
 (function () {
   var CRENEAUX = {
-    1: ["12:30", "18:30"], // lundi
-    2: ["12:30", "18:30"], // mardi
-    3: ["12:30", "18:30"], // mercredi
-    4: ["12:30", "18:30"], // jeudi
-    5: ["12:30", "18:30"], // vendredi
-    6: ["10:00", "11:30"]  // samedi
+    1: ["11:00", "12:30", "15:30", "17:00"], // lundi
+    3: ["11:00", "12:30", "15:30", "17:00"], // mercredi
+    5: ["11:00", "12:30", "15:30", "17:00"]  // vendredi
   };
-  var JOURS_AFFICHES = 10;     // nombre de jours proposés
+  var JOURS_AFFICHES = 9;      // nombre de jours proposés (3 semaines)
   var MAX_CHOIX = 3;
   var FERIES = ["2026-12-25", "2027-01-01", "2027-03-29", "2027-05-01", "2027-05-06", "2027-05-08", "2027-05-17", "2027-07-14", "2027-08-15", "2027-11-01", "2027-11-11", "2027-12-25"];
 
