@@ -34,7 +34,7 @@
       var o = M.get(sel.value);
       aside.innerHTML = '<p class="eyebrow">Votre offre</p><h2 class="o-name">' + esc(o.nom) + '</h2><p class="o-tag">' + esc(o.accroche) + "</p>" +
         prixHTML(o) + (o.condition ? '<p class="o-note">' + esc(o.condition) + "</p>" : "") + listeHTML(o) +
-        (o.delai ? '<p class="o-delai">En ligne en ' + esc(o.delai) + " après réception de vos accès</p>" : "") +
+        (o.delai ? '<p class="o-delai">En ligne en ' + esc(o.delai) + " de travail, hors temps de validation de votre côté</p>" : "") +
         (o.garantie ? '<p class="o-gar">' + esc(o.garantie) + "</p>" : "");
       var b = form.querySelector('button[type="submit"] .lbl');
       if (b) b.textContent = "Continuer vers le paiement";
@@ -143,8 +143,8 @@
         help.style.display = "block";
       } else {
         btn.href = stripeUrl(o.stripe);
-        btn.querySelector(".lbl").textContent = o.mensuel ? "Souscrire : " + M.eur(o.prix) + " / mois" : "Payer " + M.eur(o.prix) + " par carte";
-        if (o.libre) { help.innerHTML = "Sur la page Stripe, saisissez le montant <strong>" + M.eur(o.prix) + "</strong> et la référence <strong>" + esc(cl.ref) + "</strong>."; help.style.display = "block"; }
+        btn.querySelector(".lbl").textContent = o.mensuel ? (o.libre ? "Régler le 1er mois : " + M.eur(o.prix) : "Souscrire : " + M.eur(o.prix) + " / mois") : "Payer " + M.eur(o.prix) + " par carte";
+        if (o.libre) { help.innerHTML = "Sur la page Stripe, saisissez le montant <strong>" + M.eur(o.prix) + "</strong> et la référence <strong>" + esc(cl.ref) + "</strong>." + (o.mensuel ? " Le lien de prélèvement des mois suivants vous est envoyé par email." : ""); help.style.display = "block"; }
         else help.style.display = "none";
       }
       btn.dataset.mode = m;

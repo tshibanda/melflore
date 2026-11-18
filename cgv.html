@@ -43,7 +43,7 @@ p{margin:0}
 @media (max-width:640px){.h1{font-size:36px!important}}
 </style>
 <style>button.btn{border:0;cursor:pointer;font-family:inherit}.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}</style>
-<script src="/assets/site.js?v=33d0730b" defer></script>
+<script src="/assets/site.js?v=2c464c21" defer></script>
 <script data-goatcounter="https://melflore.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -59,7 +59,7 @@ p{margin:0}
     <div style="display: flex; flex-direction: column; gap: 12px; max-width: 760px">
       <p class="eyebrow">Informations légales</p>
       <h1 class="h1" style="font-size: 48px; line-height: 1.08; font-weight: 600">Conditions générales de vente</h1>
-      <p style="font-size: 15px">Version du 1er novembre 2026. Applicables aux prestations conclues entre Melflore et des clients professionnels.</p>
+      <p style="font-size: 15px">Version du 18 novembre 2026. Applicables aux prestations conclues entre Melflore et des clients professionnels.</p>
     </div>
 
     <div class="layout">
@@ -98,6 +98,7 @@ p{margin:0}
             <li><strong>Essentiel</strong> : 3 relances automatisées (bienvenue, panier abandonné, post-achat), environ 6 emails, un pop-up d'inscription, la configuration de la délivrabilité et un rapport à 30 jours.</li>
             <li><strong>Rituel</strong> : 5 relances (bienvenue, navigation abandonnée, panier abandonné, post-achat, reconquête), environ 12 emails personnalisés selon la préoccupation de peau, un pop-up avec question, une segmentation par préoccupation, un rapport chiffré à 30 jours et la garantie résultat.</li>
             <li><strong>Rituel+</strong> : le contenu du Rituel, 4 relances avancées (abandon au paiement, réachat par produit, demande d'avis, clientes VIP), environ 22 emails, un modèle d'email sur mesure, une segmentation selon l'historique d'achat, des tests A/B sur 2 relances, des rapports à 30 et 90 jours et 2 mois de suivi inclus.</li>
+            <li><strong>Relance de panier</strong> : une relance de panier abandonné en 3 emails, installée dans l'outil email du client, et un rapport à 30 jours.</li>
             <li><strong>Suivi mensuel</strong> (option) : 2 campagnes par mois, l'optimisation continue des relances et un rapport mensuel.</li>
           </ul>
           <p>L'audit offert est une prestation gratuite et sans engagement. Pour le réaliser, Melflore s'inscrit sur la boutique du prospect et ajoute un produit au panier sans payer.</p>
@@ -117,14 +118,14 @@ p{margin:0}
             <li>le paiement en une fois, à la commande ;</li>
             <li>ou le paiement en 3 fois sans frais : un tiers à la commande, un tiers à la mise en ligne, un tiers 30 jours après la mise en ligne.</li>
           </ul>
-          <p>L'offre de lancement (pack Rituel à 990 €) est réservée aux deux premiers clients et suppose leur accord pour la publication d'une étude de cas, dont ils valident le contenu avant diffusion.</p>
+          <p>L'offre de lancement (pack Rituel à 590 €) est réservée aux deux premiers clients et suppose leur accord pour la publication d'une étude de cas, dont ils valident le contenu avant diffusion.</p>
           <p>Les factures sont payables à réception, par virement bancaire ou par carte bancaire via un lien de paiement sécurisé (prestataire Stripe). Le suivi mensuel peut être réglé par prélèvement automatique sur carte, chaque mois à date anniversaire ; la résiliation par email met fin aux prélèvements à l'issue du préavis. Les données de carte sont traitées exclusivement par Stripe et ne sont jamais conservées par Melflore. Tout retard de paiement entraîne de plein droit des pénalités au taux de trois fois le taux d'intérêt légal, ainsi qu'une indemnité forfaitaire de 40 € pour frais de recouvrement. Melflore peut suspendre la prestation jusqu'au paiement complet des sommes dues.</p>
         </section>
 
         <section id="c5">
           <h2>5. Délais de livraison</h2>
-          <p>Les délais de mise en ligne sont de 7 jours ouvrés pour l'Essentiel, 14 jours ouvrés pour le Rituel et 21 jours ouvrés pour le Rituel+.</p>
-          <p>Ils courent à compter de la réception de l'ensemble des accès (Shopify, outil email) et des éléments de marque demandés lors de l'appel de lancement. Ils sont prolongés du temps de validation du client au-delà de 3 jours ouvrés.</p>
+          <p>Les délais de mise en ligne sont de 48 heures ouvrées pour la Relance de panier, 3 jours ouvrés pour l'Essentiel, 5 jours ouvrés pour le Rituel et 8 jours ouvrés pour le Rituel+. Ils correspondent au temps de travail de Melflore : la préparation des contenus, puis leur installation et leur mise en ligne.</p>
+          <p>Ils courent à compter de l'appel de lancement et de la réception de l'ensemble des accès (Shopify, outil email) et des éléments de marque demandés. Ils sont suspendus pendant la validation des contenus par le client et pendant les réglages techniques à sa charge (enregistrements DNS notamment), puis reprennent à leur réception.</p>
           <p>En cas de retard imputable à Melflore, le client est remboursé de 5 % du prix du pack par jour ouvré de retard, dans la limite de 30 % du prix.</p>
         </section>
 
@@ -147,12 +148,13 @@ p{margin:0}
             <li>la boutique conserve un trafic comparable à celui constaté lors de la commande ;</li>
             <li>le client a fourni les accès et éléments dans les délais.</li>
           </ul>
-          <p>La garantie porte sur l'existence de commandes attribuées. Elle ne garantit pas un montant de chiffre d'affaires et ne donne pas droit à remboursement.</p>
+          <p>Pour la Relance de panier, si aucune vente n'a été récupérée 30 jours après la mise en ligne, selon la même méthode d'attribution, son prix est remboursé. Son prix est déduit de celui d'un pack commandé dans les 60 jours suivant sa mise en ligne.</p>
+          <p>Pour les packs, la garantie porte sur l'existence de commandes attribuées. Elle ne garantit pas un montant de chiffre d'affaires et ne donne pas droit à remboursement.</p>
         </section>
 
         <section id="c8">
           <h2>8. Suivi mensuel</h2>
-          <p>Le suivi mensuel est facturé 690 € par mois, d'avance, sans durée minimale d'engagement. Il peut être résilié à tout moment avec un préavis de 30 jours, par email.</p>
+          <p>Le suivi mensuel est facturé 490 € par mois, d'avance, sans durée minimale d'engagement. Il peut être résilié à tout moment avec un préavis de 30 jours, par email.</p>
         </section>
 
         <section id="c9">

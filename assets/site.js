@@ -69,7 +69,7 @@
     var links = "";
     hidden.forEach(function (a) { links += '<a href="' + a.getAttribute("href") + '">' + a.textContent + '</a>'; });
     links += '<a href="/newsletter">Newsletter</a>';
-    panel.innerHTML = '<nav aria-label="Menu principal">' + links + '</nav><a class="btn" href="/audit">Recevoir mon audit offert</a><p>Vidéo de 3 minutes et estimation chiffrée, sous 4 jours ouvrés.</p>';
+    panel.innerHTML = '<nav aria-label="Menu principal">' + links + '</nav><a class="btn" href="/audit">Recevoir mon audit offert</a><p>Vidéo de 3 minutes et estimation chiffrée, sous 5 jours ouvrés.</p>';
     nav.appendChild(burger);
     header.appendChild(panel);
     var setMenu = function (open) {
