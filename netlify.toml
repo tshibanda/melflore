@@ -45,3 +45,13 @@
   for = "/a/*"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
+
+[[redirects]]
+  from = "/p/:partenaire"
+  to = "/audit.html"
+  status = 200
+
+[[headers]]
+  for = "/p/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
