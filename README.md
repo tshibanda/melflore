@@ -33,7 +33,7 @@ Tester en local : `python3 -m http.server` à la racine, puis ouvrir http://loca
 
 ## Newsletter (Klaviyo)
 
-Les formulaires « La Lettre Melflore » (pied de page de toutes les pages et page `/newsletter`) envoient chaque inscription :
+Les formulaires « La Newsletter Melflore » (pied de page de toutes les pages et page `/newsletter`) envoient chaque inscription :
 - à Netlify Forms (formulaire `newsletter`), toujours, en secours ;
 - à Klaviyo dès que `companyId` (clé publique « Site ID ») et `listId` sont renseignés en haut de `assets/site.js`.
 

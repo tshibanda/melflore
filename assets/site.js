@@ -1,6 +1,6 @@
 /* Melflore : comportements communs (en-tête, animations, newsletter) */
 (function () {
-  // Klaviyo : clé publique (Site ID) et liste « Lettre Melflore » (double opt-in).
+  // Klaviyo : clé publique (Site ID) et liste « Newsletter Melflore » (double opt-in).
   // Chaque inscription est aussi enregistrée dans Netlify Forms (formulaire « newsletter »), en secours.
   var KLAVIYO = { companyId: "VTL8z3", listId: "Tk8FMS" };
   var KLAVIYO_REVISION = "2026-10-15";
@@ -119,7 +119,7 @@
     if (a) track("clic-audit" + location.pathname.replace(/\/$/, "").replace(/\//g, "-"), "Clic vers l'audit");
   });
 
-  // Demande d'audit : événement Klaviyo (suivi) et inscription facultative à la Lettre
+  // Demande d'audit : événement Klaviyo (suivi) et inscription facultative à la Newsletter Melflore
   function kpost(path, payload) {
     if (!KLAVIYO.companyId) return;
     try {
