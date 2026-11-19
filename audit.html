@@ -177,6 +177,7 @@ textarea.input{height:auto;min-height:96px;padding:12px 14px;resize:vertical}
         <a href="/ressources">Ressources</a>
         <a href="/exemples">Exemples</a>
         <a href="/calculateur">Calculateur</a>
+        <a href="/test-emails">Test de vos emails</a>
         <a href="/newsletter">Newsletter</a>
         <a href="/mentions-legales">Mentions légales</a>
         <a href="/cgv">CGV</a>
@@ -191,7 +192,7 @@ textarea.input{height:auto;min-height:96px;padding:12px 14px;resize:vertical}
   </footer>
 </div>
 <script>
-(function(){var q=new URLSearchParams(location.search);var u=q.get('url');if(u){document.getElementById('a-url').value=u;}var so=q.get('source');if(so){var h=document.createElement('input');h.type='hidden';h.name='source';h.id='a-source';h.value=so.slice(0,40);document.querySelector('form[name=audit]').appendChild(h);}var c=q.get('ca');if(c){var s=document.querySelector('select[name=ca]');if(s){for(var i=0;i<s.options.length;i++){if(s.options[i].text===c){s.selectedIndex=i;}}}}
+(function(){var q=new URLSearchParams(location.search);var u=q.get('url');if(u){document.getElementById('a-url').value=u;}var so=q.get('source');if(so){var h=document.querySelector('form[name=audit] input[name=source]');if(!h){h=document.createElement('input');h.type='hidden';h.name='source';document.querySelector('form[name=audit]').appendChild(h);}h.id='a-source';h.value=so.slice(0,40);}var c=q.get('ca');if(c){var s=document.querySelector('select[name=ca]');if(s){for(var i=0;i<s.options.length;i++){if(s.options[i].text===c){s.selectedIndex=i;}}}}
 if(q.get('erreur')){document.getElementById('a-err').style.display='block';}})();
 </script>
 </body>
